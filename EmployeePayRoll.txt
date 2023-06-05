@@ -58,3 +58,20 @@ mysql> select * from employee_tb;
 |  3 | Sunil   |   30 | MECH       | 80000.00 |
 +----+--------+------+------------+-----------+
 3 rows in set (0.00 sec)
+
+#UC5:-
+mysql> select name from employee_tb where id=1;
++--------+
+| name   |
++--------+
+| Pallavi |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select * from employee_tb where id=1;
++----+--------+------+------------+---------+
+| id | name   | age  | department | salary  |
++----+--------+------+------------+---------+
+|  1 | Pallavi |  25 | IT         | 50000.00|
++----+--------+------+------------+---------+
+1 row in set (0.00 sec)
