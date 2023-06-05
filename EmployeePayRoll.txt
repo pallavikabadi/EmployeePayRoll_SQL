@@ -43,3 +43,7 @@ mysql> desc employee_tb;
 +------------+---------------+------+-----+---------+----------------+
 5 rows in set (0.02 sec)
 
+#UC3:-
+mysql> insert into employee_tb(name,age,department,salary)values('Pallavi',25,'IT',50000.00),('Ajit',20,'CIVIL',55000.00),('Sunil',30,'MECH',80000.00);
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
