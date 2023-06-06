@@ -171,3 +171,38 @@ mysql> select * from employee_tb ORDER BY name DESC;
 |  3 | Ajit  |   20 | CIVIL     | 5000.00 |
 +----+--------+------+------------+---------+
 3 rows in set (0.00 sec)
+
+mysql> alter table employee_tb add address varchar(50) after age;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_tb add phonenumber int after address;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_tb add department varchar(20) after phonenumber;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update employee_tb set address='pune', phonenumber = 6574732 where id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_tb set address = 'A.Nagar',phonenumber = 54453214 where id = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_tb set address = 'Nasik',phonenumber = 994423134 where id = 3;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_tb;
++----+--------+------+-----------+-------------+------------+---------+
+| id | name   | age  | address   | phonenumber | department | salary  |
++----+--------+------+-----------+-------------+------------+---------+
+|  1 | Pallavi|   25 | pune      |     6574732 |  IT        | 5000.00 |
+|  2 | Ajit   |   20 | A.Nagar   |    54453214 |  CIVIL     | 6000.00 |
+|  3 | Sunil  |   30 | Nasik     |   994423134 |  MECH      | 8000.00 |
++----+--------+------+-----------+-------------+------------+---------+
+3 rows in set (0.00 sec)
+
