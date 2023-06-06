@@ -200,9 +200,51 @@ mysql> select * from employee_tb;
 +----+--------+------+-----------+-------------+------------+---------+
 | id | name   | age  | address   | phonenumber | department | salary  |
 +----+--------+------+-----------+-------------+------------+---------+
-|  1 | Pallavi|   25 | pune      |     6574732 |  IT        | 5000.00 |
-|  2 | Ajit   |   20 | A.Nagar   |    54453214 |  CIVIL     | 6000.00 |
-|  3 | Sunil  |   30 | Nasik     |   994423134 |  MECH      | 8000.00 |
+|  1 | Pallavi|   25 | pune      |     6574732 |  IT        | 5500.00 |
+|  2 | Ajit   |   20 | A.Nagar   |    54453214 |  CIVIL     | 5000.00 |
+|  3 | Sunil  |   30 | Nasik     |   994423134 |  MECH      | 7000.00 |
 +----+--------+------+-----------+-------------+------------+---------+
 3 rows in set (0.00 sec)
 
+#UC9:-
+mysql> alter table employee_tb add basic_pay int after salary;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_tb add deductions int after basic_pay;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_tb add taxable_pay int after deductions;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_tb add income_tax int after taxable_pay;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_tb add net_pay int after income_tax;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update employee_tb set basic_pay = 5000000,deductions = 25000,taxable_pay = 20000,income_tax = 45000,net_pay = 45000000 where id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_tb set basic_pay = 4000000,deductions = 20000,taxable_pay = 30000,income_tax = 25000,net_pay = 35000000 where id = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_tb set basic_pay = 6000000,deductions = 30000,taxable_pay = 45000,income_tax = 50000,net_pay = 55000000 where id = 3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_tb;
++----+--------+------+-----------+-------------+------------+---------+-----------+------------+-------------+------------+----------+
+| id | name   | age  | address   | phonenumber | department | salary  | basic_pay | deductions | taxable_pay | income_tax | net_pay  |
++----+--------+------+-----------+-------------+------------+---------+-----------+------------+-------------+------------+----------+
+|  1 | Pallavi|   25 | pune      |     6574732 | IT         | 5500.00 |   5000000 |      25000 |       20000 |      45000 | 45000000 |
+|  2 | Ajit   |   20 | A.Nagar   |    54453214 | CIVIL      | 6000.00 |   4000000 |      20000 |       30000 |      25000 | 35000000 |
+|  3 | Sunil  |   30 | Nasik     |   994423134 | MECH       | 7000.00 |   6000000 |      30000 |       45000 |      50000 | 55000000 |
++----+--------+------+-----------+-------------+------------+---------+-----------+------------+-------------+------------+----------+
+3 rows in set (0.00 sec)
