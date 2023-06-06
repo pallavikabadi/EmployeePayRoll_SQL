@@ -75,3 +75,20 @@ mysql> select * from employee_tb where id=1;
 |  1 | Pallavi |  25 | IT         | 50000.00|
 +----+--------+------+------------+---------+
 1 row in set (0.00 sec)
+#UC6:-
+mysql> select * from employee_tb where salary>6000;
++----+-------+------+------------+---------+
+| id | name  | age  | department | salary  |
++----+-------+------+------------+---------+
+|  3 | Sunil |   30 | MECH       | 7000.00|
++----+-------+------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from employee_tb where salary>5000;
++----+-------+------+------------+---------+
+| id | name  | age  | department | salary  |
++----+-------+------+------------+---------+
+|  2 |Pallavi|   25 | IT         | 5500.00 |
+|  3 | Sunil |   30 | EC         | 7000.00 |
++----+-------+------+------------+---------+
+2 rows in set (0.00 sec)
