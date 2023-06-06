@@ -92,3 +92,82 @@ mysql> select * from employee_tb where salary>5000;
 |  3 | Sunil |   30 | EC         | 7000.00 |
 +----+-------+------+------------+---------+
 2 rows in set (0.00 sec)
+
+#UC7:-
+mysql> select count(*) from employee_tb;
++----------+
+| count(*) |
++----------+
+|        3 |
++----------+
+1 row in set (0.01 sec)
+
+mysql>  select min(salary) from employee_tb;
++-------------+
+| min(salary) |
++-------------+
+|     5000.00 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql>  select max(salary) from employee_tb;
++-------------+
+| max(salary) |
++-------------+
+|     7000.00 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql>  select avg(salary) from employee_tb;
++-------------+
+| avg(salary) |
++-------------+
+| 5833.333333 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql>  select sum(salary) from employee_tb;
++-------------+
+| sum(salary) |
++-------------+
+|    17500.00 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from employee_tb;
+----+--------+------+------------+-----------+
+| id | name    | age  | department | salary   |
++----+--------+------+------------+-----------+
+|  1 | Pallavi |   25 | IT         | 5500.00 |
+|  2 | Ajit    |   20 | CIVIL      | 5000.00 |
+|  3 | Sunil   |   30 | MECH       | 7000.00 |
++----+--------+------+------------+-----------+
+3 rows in set (0.03 sec)
+
+mysql> select * from employee_tb where name LIKE 'A%';
++----+--------+------+------------+---------+
+| id | name   | age  | department | salary  |
++----+--------+------+------------+---------+
+|  1 | Ajit   |   20 | CIVIL      | 5000.00 |
++----+--------+------+------------+---------+
+2 rows in set (0.01 sec)
+
+mysql> select * from employee_tb ORDER BY name ASC;
++----+--------+------+------------+---------+
+| id | name   | age  | department | salary  |
++----+--------+------+------------+---------+
+|  3 | Ajit  |   20 | Civil         | 5000.00 |
+|  2 | Pallavi|   25 | IT         | 5500.00 |
+|  1 | Sunil |   30 | MECH      | 7000.00 |
++----+--------+------+------------+---------+
+3 rows in set (0.01 sec)
+
+mysql> select * from employee_tb ORDER BY name DESC;
++----+--------+------+------------+---------+
+| id | name   | age  | department | salary  |
++----+--------+------+------------+---------+
+|  1 | Sunil |   30 | MECH      | 7000.00 |
+|  2 | Pallavi|   25 | IT       | 5500.00 |
+|  3 | Ajit  |   20 | CIVIL     | 5000.00 |
++----+--------+------+------------+---------+
+3 rows in set (0.00 sec)
