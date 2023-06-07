@@ -250,3 +250,15 @@ mysql> select * from employee_tb;
 3 rows in set (0.00 sec)
 
 #UC10:ER diagram for Employeedb
+
+mysql> insert into employee_tb(name,gender,age,address,phonenumber,department,salary,basic_pay,deductions,taxable_pay,income_tax,net_pay) values('Terissa','female',22,'lumut',778889999,'IT',10000,20000,80000,10000,30000,1800000);
+
+mysql> select * from employee_tb;
++----+---------+--------+------+---------+-------------+------------+----------+-----------+------------+-------------+------------+----------+
+| id | name    | gender | age  | address | phonenumber | department | salary   | basic_pay | deductions | taxable_pay | income_tax | net_pay  |
++----+---------+--------+------+---------+-------------+------------+----------+-----------+------------+-------------+------------+----------+
+|  1 | Pallavi | female |   25 | pune    |     6574732 | IT         |  5500.00 | 5000000 |      25000 |       20000 |      45000 | 45000000 |
+|  2 | Ajit    | male   |   20 | A.Nagar |    54453214 | CIVIL      |  5000.00 |4000000 |      20000 |       30000 |      25000 | 35000000 |
+|  3 | Sunil   | male   |   30 | Nasik   |   994423134 | MECH       |  7000.00 |6000000 |      30000 |       45000 |      50000 | 55000000 |
+|  4 | Terissa | female |   22 | lumut   |   778889999 | IT         | 10000.00 |20000 |      80000 |       10000 |      30000 |  1800000 |
++----+---------+--------+------+---------+-------------+------------+----------+-----------+------------+-------------+------------+----------+
